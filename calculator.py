@@ -66,12 +66,16 @@ while True:
         if validate_two_args(tokens) == False:
             continue
         print(square(int(tokens[1])))
-
     
     elif tokens[0] == 'cube':
         if validate_two_args(tokens) == False:
             continue
         print(cube(int(tokens[1])))
+        
+    elif tokens[0] == 'pow':
+        if validate_three_args(tokens) == False:
+            continue
+        print(power(int(tokens[1]), int(tokens[2])))
         
     else:
         print("wrong operation!")
