@@ -39,5 +39,7 @@ while True:
             continue 
         print(subtract(int(tokens[1]), int(tokens[2])))
 
-    
-        
+    elif tokens[0] == '*':    
+        if validate_three_args(tokens) == False:
+            continue 
+        print(multiply(int(tokens[1]), int(tokens[2])))
