@@ -20,6 +20,17 @@ def validate_three_args(tokens):
         return False
     return True
 
+def validate_two_args(tokens):
+    if len(tokens) < 2:
+        print("Please input 2 arguments: an operator and a number.")
+        return False
+    num1 = tokens[1]
+    try:
+        num1 = int(num1)
+    except:
+        print("first argument is not a number!")
+        return False
+    return True
 
 while True:
     input_string = input("Please enter your equation > ")
@@ -50,5 +61,11 @@ while True:
             print("can not divide by zero!")
             continue
         print(round(divide(int(tokens[1]), int(tokens[2])), 2))
+
+    elif tokens[0] == 'square':
+        if validate_two_args(tokens) == False:
+            continue
+        print(square(int(tokens[1])))
+        
     else:
         print("wrong operation!")
