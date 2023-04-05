@@ -76,6 +76,14 @@ while True:
         if validate_three_args(tokens) == False:
             continue
         print(power(int(tokens[1]), int(tokens[2])))
-        
+
+    elif tokens[0] == 'mod':    
+        if validate_three_args(tokens) == False:
+            continue 
+        if int(tokens[2]) == 0:
+            print("can not divide by zero!")
+            continue
+        print(mod(int(tokens[1]), int(tokens[2])))
+
     else:
         print("wrong operation!")
