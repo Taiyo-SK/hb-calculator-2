@@ -21,7 +21,6 @@ def validate_three_args(tokens):
     return True
 
 
-# Replace this with your code
 while True:
     input_string = input("Please enter your equation > ")
     tokens = input_string.split(' ') 
@@ -43,3 +42,13 @@ while True:
         if validate_three_args(tokens) == False:
             continue 
         print(multiply(int(tokens[1]), int(tokens[2])))
+
+    elif tokens[0] == '/':    
+        if validate_three_args(tokens) == False:
+            continue 
+        if int(tokens[2]) == 0:
+            print("can not divide by zero!")
+            continue
+        print(round(divide(int(tokens[1]), int(tokens[2])), 2))
+    else:
+        print("wrong operation!")
