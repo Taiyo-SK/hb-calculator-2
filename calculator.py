@@ -9,12 +9,12 @@ def validate_three_args(tokens):
     num1 = tokens[1]
     num2 = tokens[2]
     try: 
-        num1 = int(num1)
+        num1 = float(num1)
     except:
         print("second argument is not a number!")
         return False
     try: 
-        num2 = int(num2)
+        num2 = float(num2)
     except:
         print("third argument is not a number!")
         return False
@@ -26,7 +26,7 @@ def validate_two_args(tokens):
         return False
     num1 = tokens[1]
     try:
-        num1 = int(num1)
+        num1 = float(num1)
     except:
         print("first argument is not a number!")
         return False
@@ -42,17 +42,17 @@ while True:
     elif tokens[0] == '+':
         if validate_three_args(tokens) == False:
             continue 
-        print(add(int(tokens[1]), int(tokens[2])))
+        print(round(add(float(tokens[1]), float(tokens[2])), 2))
 
     elif tokens[0] == '-':
         if validate_three_args(tokens) == False:
             continue 
-        print(subtract(int(tokens[1]), int(tokens[2])))
+        print(round(subtract(float(tokens[1]), float(tokens[2])), 2))
 
     elif tokens[0] == '*':    
         if validate_three_args(tokens) == False:
             continue 
-        print(multiply(int(tokens[1]), int(tokens[2])))
+        print(round(multiply(float(tokens[1]), float(tokens[2])), 2))
 
     elif tokens[0] == '/':    
         if validate_three_args(tokens) == False:
@@ -60,22 +60,22 @@ while True:
         if int(tokens[2]) == 0:
             print("can not divide by zero!")
             continue
-        print(round(divide(int(tokens[1]), int(tokens[2])), 2))
+        print(round(divide(float(tokens[1]), float(tokens[2])), 2))
 
     elif tokens[0] == 'square':
         if validate_two_args(tokens) == False:
             continue
-        print(square(int(tokens[1])))
+        print(round(square(float(tokens[1])), 2))
     
     elif tokens[0] == 'cube':
         if validate_two_args(tokens) == False:
             continue
-        print(cube(int(tokens[1])))
+        print(round(cube(float(tokens[1])), 2))
         
     elif tokens[0] == 'pow':
         if validate_three_args(tokens) == False:
             continue
-        print(power(int(tokens[1]), int(tokens[2])))
+        print(round(power(float(tokens[1]), float(tokens[2])), 2))
 
     elif tokens[0] == 'mod':    
         if validate_three_args(tokens) == False:
@@ -83,7 +83,7 @@ while True:
         if int(tokens[2]) == 0:
             print("can not divide by zero!")
             continue
-        print(mod(int(tokens[1]), int(tokens[2])))
+        print(round(mod(float(tokens[1]), float(tokens[2])), 2))
 
     else:
         print("wrong operation!")
